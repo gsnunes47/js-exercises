@@ -1,45 +1,7 @@
-let botao = document.getElementById("btn")
-let botaosqrt = document.getElementById("btnsqrt")
-let botaopct = document.getElementById("btnpct")
-let botaodivisao = document.getElementById("btn/")
-let botao7 = document.getElementById("btn7")
-let botao8 = document.getElementById("btn8")
-let botao9 = document.getElementById("btn9")
-let botaovezes = document.getElementById("btn*")
-let botao4 = document.getElementById("btn4")
-let botao5 = document.getElementById("btn5")
-let botao6 = document.getElementById("btn6")
-let botaomenos = document.getElementById("btn-")
-let botao1 = document.getElementById("btn1")
-let botao2 = document.getElementById("btn2")
-let botao3 = document.getElementById("btn3")
-let botaomais = document.getElementById("btn+")
-let botao0 = document.getElementById("btn0")
-let botaoponto = document.getElementById("btn.")
-let botaoigual = document.getElementById("btn=")
+let botao = document.querySelectorAll("button")
 
-// botao.addEventListener("click", print(botao.innerText))
-// botaosqrt.addEventListener("click", print(botaosqrt.innerText))
-// botaopct.addEventListener("click", print(botaopct.innerText))
-// botaodivisao.addEventListener("click", print(botaodivisao.innerText))
-// botao7.addEventListener("click", print(botao7.innerText))
-// botao8.addEventListener("click", print(botao8.innerText))
-// botao9.addEventListener("click", print(botao9.innerText))
-// botaovezes.addEventListener("click", print(botaovezes.innerText))
-// botao4.addEventListener("click", print(botao4.innerText))
-// botao5.addEventListener("click", print(botao5.innerText))
-// botao6.addEventListener("click", print(botao6.innerText))
-// botaomenos.addEventListener("click", print(botaomenos.innerText))
-// botao1.addEventListener("click", print(botao1.innerText))
-// botao2.addEventListener("click", print(botao2.innerText))
-// botao3.addEventListener("click", print(botao3.innerText))
-// botaomais.addEventListener("click", print(botaomais.innerText))
-// botao0.addEventListener("click", print(botao0.innerText))
-// botaoponto.addEventListener("click", print(botaoponto.innerText))
-
-botaoigual.addEventListener("click", function(){console.log(botaoigual.innerText)})
-
-
-// function print(txt){
-//     console.log(txt)
-// }
+for(let c = 1; c <= 18; c++){
+    botao[c].addEventListener("click", function(){
+        console.log(botao[c].innerText)
+    })
+}

@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+}
+
+button {
+    background-color: rgb(64, 64, 64)
+    ;
+    color: rgb(23, 153, 111);
+    font-family: "Jetbrains Mono";
+    
+    border-style: ridge;
+    border-color: rgb(140, 140, 140);
+    border-width: 2px;
+}
+
+button:hover {
+    size: initial;
+}
