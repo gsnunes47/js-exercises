@@ -1,26 +1,48 @@
 .container{
     display: grid;
     grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
     gap: 5px;
+    padding-left: 3px;
 }
 
 .btn{
     grid-row: span 2;
+    background-color: rgb(20, 187, 20);
 }
 
-.resultado {
+.btnce{
+    background-color: rgb(20, 187, 20);
+}
+
+button {
+    font-size: 35px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.848);
+
+}
+
+.result {
     grid-column: span 4;
+    border: 1px;
+    border-style: double;
+
 }
 
+.result_text {
+    /* padding-left: 360px;
+    padding-top: 5px; */
+    padding: 10px;
+    font-size: 40px;
+}
 
-/* 
+/*
 button {
     background-color: rgb(64, 64, 64)
     ;
     color: rgb(23, 153, 111);
     font-family: "Jetbrains Mono";
-    
+
     border-style: ridge;
     border-color: rgb(140, 140, 140);
     border-width: 2px;

@@ -1,5 +1,5 @@
 let botao = document.querySelectorAll("button")
-let resultado = document.querySelector(".result")
+let resultado = document.querySelector(".result_text")
 let string = ''
 let lista = []
 let first_number
@@ -43,5 +43,16 @@ botao[0].addEventListener("click", function(){
 
 botao[18].addEventListener("click", function(){
     second_number = resultado.innerText
-    resultado.innerHTML = `${first_number} ${operation} ${second_number} = RESULTADO`
+    if (operation == '+'){
+        resultado.innerHTML = `${first_number} + ${second_number} = ${parseInt(first_number) + parseInt(second_number)}`
+    }
+    else if (operation == '-'){
+        resultado.innerHTML = `${first_number} - ${second_number} = ${parseInt(first_number - second_number)}`
+    }
+    else if (operation == '*'){
+        resultado.innerHTML = `${first_number} * ${second_number} = ${parseInt(first_number * second_number)}`
+    }
+    else if (operation == '/'){
+        resultado.innerHTML = `${first_number} / ${second_number} = ${parseInt(first_number / second_number)}`
+    }
 })
