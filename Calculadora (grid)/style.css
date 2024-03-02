@@ -1,7 +1,20 @@
-body{
-    background-color: black;
+.container{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    gap: 5px;
 }
 
+.btn{
+    grid-row: span 2;
+}
+
+.resultado {
+    grid-column: span 4;
+}
+
+
+/* 
 button {
     background-color: rgb(64, 64, 64)
     ;
@@ -11,8 +24,4 @@ button {
     border-style: ridge;
     border-color: rgb(140, 140, 140);
     border-width: 2px;
-}
-
-button:hover {
-    size: initial;
-}
+} */

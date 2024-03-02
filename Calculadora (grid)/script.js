@@ -2,25 +2,46 @@ let botao = document.querySelectorAll("button")
 let resultado = document.querySelector(".result")
 let string = ''
 let lista = []
+let first_number
+let second_number
+let operation
 
 
-for(let c = 1; c <= 18; c++){
+for(let c = 1; c <= 17; c++){
     botao[c].addEventListener("click", function(){
         let number = botao[c].innerText
-        if (number in [1,2,3,4,5,6,7,8,9]){
-            resultado.innerHTML += `${number}`
-            lista.push(number)
+        if (number == 0){
+            if(lista[0] >= 1){
+                lista.push(number)
+                resultado.innerHTML += `${number}`
+            }
+            else{
+                alert('O primeiro número não pode ser 0!')
+            }
         }
-        else if #operação ou zero{
 
+        else if (number == '+' || number == '-' || number == '*' || number == '/' || number == '√' || number == '%'){
+                first_number = resultado.innerText
+                operation = number
+                resultado.innerHTML = ''
         }
+
+        else {
+            lista.push(number)
+            resultado.innerHTML += `${number}`
+        }
+
     })
 }
 
-// let teste = 1
-// if(teste in [1,2,3]){
-//     console.log('true')
-// }
-// else{
-//     console.log('false')
-// }
+botao[0].addEventListener("click", function(){
+    resultado.innerHTML = ''
+    first_number = 0
+    second_number = 0
+    operation = ''
+})
+
+botao[18].addEventListener("click", function(){
+    second_number = resultado.innerText
+    resultado.innerHTML = `${first_number} ${operation} ${second_number} = RESULTADO`
+})
