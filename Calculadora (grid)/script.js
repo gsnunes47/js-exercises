@@ -11,6 +11,22 @@ for(let c = 1; c <= 17; c++){
     botao[c].addEventListener("click", function(){
         let number = botao[c].innerText
 
+        if (lista.length == 0 && first_number){
+            if (number == '+' || number == '-' || number == '*' || number == '/' || number == '√' || number == '%'){               
+                operation = number
+                resultado.innerHTML = ''
+                lista.push(number)
+                console.log('entrei aqui')
+            }
+            else{
+                resultado.innerHTML = ''
+                first_number = 0
+                second_number = 0
+                truncateList(lista)
+                operation = ''
+            }
+        }
+        
         if (number == 0){
             if(lista.length == 0){
                 resultado.innerHTML += number
@@ -27,11 +43,14 @@ for(let c = 1; c <= 17; c++){
                 lista.push(number)
             }
         }
-
+        
         else if (number == '+' || number == '-' || number == '*' || number == '/' || number == '√' || number == '%'){
+            if (first_number == undefined){
                 first_number = resultado.innerText
-                operation = number
-                resultado.innerHTML = ''
+                console.log('entrei lá')
+            }
+            operation = number
+            resultado.innerHTML = ''
         }
 
         else {
@@ -54,16 +73,22 @@ botao[18].addEventListener("click", function(){
     second_number = resultado.innerText
     if (operation == '+'){
         resultado.innerHTML = `${first_number} + ${second_number} = ${parseFloat(first_number) + parseFloat(second_number)}`
+        first_number = parseFloat(first_number) + parseFloat(second_number)
     }
     else if (operation == '-'){
         resultado.innerHTML = `${first_number} - ${second_number} = ${parseFloat(first_number - second_number)}`
+        first_number = parseFloat(first_number) - parseFloat(second_number)
     }
     else if (operation == '*'){
         resultado.innerHTML = `${first_number} * ${second_number} = ${parseFloat(first_number * second_number)}`
+        first_number = parseFloat(first_number) * parseFloat(second_number)
     }
     else if (operation == '/'){
         resultado.innerHTML = `${first_number} / ${second_number} = ${parseFloat(first_number / second_number)}`
+        first_number = parseFloat(first_number) / parseFloat(second_number)
     }
+    second_number = 0
+    truncateList(lista)
 })
 
 function inList(list, obj){
@@ -78,4 +103,10 @@ function inList(list, obj){
         }
     }
     return ver
+}
+
+function truncateList(list){
+    for(let c = 0; c<= list.length; c++){
+        list.pop()
+    }
 }
